@@ -27,3 +27,10 @@ class CurrencyConverter:
             return round(amount * rates[target_currency], 2)
         else:
             raise ValueError(f"No exchange rate available for {target_currency} on {date}")
+
+    def get_available_currencies(self):
+        url = f"https://api.fastforex.io/currencies?api_key={self.api_key}"
+        response = requests.get(url)
+        response.raise_for_status()
+        available_currencies = response.json()['currencies']
+        return available_currencies
