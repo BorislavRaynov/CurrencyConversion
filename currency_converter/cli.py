@@ -19,11 +19,12 @@ class CurrencyConversionCLI:
                 continue
 
             while running:
+                available_currencies = self.converter.get_available_currencies()
                 base_currency = input("Enter base currency (ISO 4217 code) or 'END' to quit: ").strip().upper()
                 if base_currency == 'END':
                     running = False
                     break
-                if not is_valid_currency(base_currency):
+                if base_currency not in available_currencies:
                     print("Invalid currency code. Please try again.")
                     continue
 
@@ -32,8 +33,11 @@ class CurrencyConversionCLI:
                     if target_currency == 'END':
                         running = False
                         break
-                    if not is_valid_currency(target_currency):
-                        print("Invalid currency code. Please try again or 'END' to quit: .")
+                    if target_currency not in available_currencies:
+                        print("Invalid currency code. Please try again.")
+                        continue
+                    if target_currency == base_currency:
+                        print("Target currency is the same as base currency. Please enter different.")
                         continue
 
                     while running:
