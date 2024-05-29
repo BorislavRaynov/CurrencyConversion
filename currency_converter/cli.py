@@ -1,4 +1,4 @@
-from .validators import is_valid_date, is_valid_currency
+from .validators import is_valid_date
 from .conv_logging import save_conversion_log
 from .converter import CurrencyConverter
 
