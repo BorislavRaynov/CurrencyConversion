@@ -7,7 +7,3 @@ def is_valid_date(date_string):
         return True
     except ValueError:
         return False
-
-
-def is_valid_currency(currency):
-    return len(currency) == 3 and currency.isalpha()
