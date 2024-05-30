@@ -7,4 +7,5 @@ HOW TO SET UP AND RUN THE APP
     - Create config.json file in root of the project and define "api_key".
 
     RUN IN CMD THE FOLLOWING COMMAND:
+    - pip install -r requirements.txt
     - python CurrencyConversion.py
