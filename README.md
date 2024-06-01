@@ -5,7 +5,8 @@ HOW TO SET UP AND RUN THE APP
 ---
     - If you are using trial version currency backdating is limited to 14 days.
     - Create config.json file in root of the project and define "api_key".
-
+---
     RUN IN CMD THE FOLLOWING COMMAND:
     - pip install -r requirements.txt
     - python CurrencyConversion.py
+---
